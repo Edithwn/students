@@ -11,20 +11,26 @@
 |
 */
 
-Route::get('Movies', function () {
-    return view('welcome');
-});
-Route::get('movies', function()
-{
-    return view('movies');
-});
+//    return view('welcome');
+
+//Route::get('movies', function()
+
+
+
+
 
 Route::get('/about',function () {
 	   return view('about');
 	});
-Route::get('/movies','MoviesController@index');
-Route::controller('/movies','MoviesController');
+Route::get('/students',function(){
+	$students = \App\Student:: all ();
+	return view ('students',['students'=>$students]);
+	
+
+	//$students=\App\Student::all();
+//return view('students',['students'=>$students]);
+//Route::controller('/movies','MoviesController');
 
 
-
+});
 
